@@ -1,0 +1,5 @@
+{
+  "name": "Ashes Trade Tracker",
+  "description": "A high-performance trade route logger and analytics tool for Ashes of Creation. Track profits between nodes, analyze delivery times, and discover the most lucrative trade routes using Gemini-powered insights.",
+  "requestFramePermissions": []
+}

@@ -4,7 +4,7 @@ import { Currency } from '../types';
 export const copperToCurrency = (totalCopper: number): Currency => {
   const gold = Math.floor(totalCopper / 10000);
   const silver = Math.floor((totalCopper % 10000) / 100);
-  const copper = totalCopper % 100;
+  const copper = Math.floor(totalCopper % 100);
   return { gold, silver, copper };
 };
 
@@ -17,6 +17,6 @@ export const formatCurrency = (totalCopper: number): string => {
   const parts = [];
   if (gold > 0) parts.push(`${gold}з`);
   if (silver > 0) parts.push(`${silver}с`);
-  if (copper > 0 || parts.length === 0) parts.push(`${copper}м`);
+  if (copper > 0 || (gold === 0 && silver === 0)) parts.push(`${copper}м`);
   return parts.join(' ');
 };

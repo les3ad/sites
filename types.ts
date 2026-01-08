@@ -8,6 +8,7 @@ export interface TradeRecord {
   profit: number; // Total profit (packsCount * pricePerPack)
   timestamp: string; // ISO string
   type: 'sale';
+  durationMinutes?: number; // Time taken for the trip
 }
 
 export interface ExpenseRecord {
@@ -49,4 +50,16 @@ export interface Currency {
   gold: number;
   silver: number;
   copper: number;
+}
+
+export interface ChatMessage {
+  role: 'user' | 'model';
+  text: string;
+  timestamp: string;
+}
+
+export interface ActiveTrip {
+  startTime: string;
+  fromNode: string;
+  toNode: string;
 }
